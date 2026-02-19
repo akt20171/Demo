@@ -17,9 +17,9 @@ def get_number(prompt):
 
 def show_menu():
     print("\n--- Simple Calculator ---")
-    print("  1. Add (+)")
-    print("  2. Subtract (-)")
-    print("  q. Quit")
+    print("  + : Addition")
+    print("  - : Subtraction")
+    print("  q : Quit")
     print("-------------------------")
 
 
@@ -28,23 +28,23 @@ def main():
 
     while True:
         show_menu()
-        choice = input("Choose an option: ").strip().lower()
+        choice = input("Choose an operation: ").strip()
 
         if choice == "q":
             print("Goodbye!")
             break
-        elif choice in ("1", "2"):
+        elif choice in ("+", "-"):
             a = get_number("Enter first number:  ")
             b = get_number("Enter second number: ")
 
-            if choice == "1":
+            if choice == "+":
                 result = add(a, b)
                 print(f"  {a} + {b} = {result}")
             else:
                 result = subtract(a, b)
                 print(f"  {a} - {b} = {result}")
         else:
-            print("  Invalid option. Please choose 1, 2, or q.")
+            print("  Invalid option. Please choose +, -, or q.")
 
 
 if __name__ == "__main__":
