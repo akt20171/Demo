@@ -47,5 +47,5 @@ def main():
             print("  Invalid option. Please choose +, -, or q.")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()

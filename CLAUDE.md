@@ -1,128 +1,261 @@
 # Simple Calculator (Python CLI)
 
-## Mission
+---
+
+## 1️⃣ Mission
 
 Build a beginner-friendly command-line calculator that:
-- Supports addition and subtraction
-- Validates input
-- Loops until user quits
 
-Keep everything simple and readable.
+- Supports addition and subtraction
+- Validates numeric input
+- Loops until user exits
+- Is simple, readable, and fully tested
+
+Clarity and correctness are more important than cleverness.
 
 ---
 
-## Stack
+## 2️⃣ Technology Stack
 
 - Python 3.11+
-- Standard library only
-- pytest for testing
+- pytest
+- pytest-cov
+- black
+- ruff
+- bandit
+- pip-audit
+- detect-secrets
 
 ---
 
-## Scope
+## 3️⃣ Scope
 
-IN SCOPE:
-- + and - only
-- CLI menu
+### In Scope
+- Addition (+)
+- Subtraction (-)
+- CLI interaction
 - Input validation
-- Loop for repeated calculations
+- Unit tests
+- Coverage enforcement
 
-OUT OF SCOPE:
-- Multiplication/division
+### Out of Scope
 - GUI
 - Web app
-- Expression parsing like "2+2"
+- Expression parsing (e.g., "2+2")
+- Advanced math
+- External frameworks
 
 ---
 
-## Architecture
+## 4️⃣ Architecture
 
 Single file:
-- calculator.py
 
-Functions required:
-- add(a, b)
-- subtract(a, b)
-- get_number(prompt)
-- show_menu()
-- main()
+- `calculator.py`
+
+Required functions:
+
+- `add(a, b)`
+- `subtract(a, b)`
+- `get_number(prompt)`
+- `show_menu()`
+- `main()`
 
 Tests:
-- tests/test_calculator.py
 
----
+- `tests/test_calculator.py`
 
-# 🔁 Required Multi-Agent Workflow
+Architecture rules:
 
-All changes MUST follow this sequence:
-
-1️⃣ Planner  
-- Produce a short plan (5–8 steps)
-- List edge cases
-- List files impacted
-- No code yet
-
-2️⃣ Implementer  
-- Implement calculator.py
-- Follow CLAUDE.md rules strictly
-- Keep code beginner-friendly
-
-3️⃣ Test Writer  
-- Create/update tests/test_calculator.py
-- Cover:
-  - add()
-  - subtract()
-  - get_number() validation
-- Tests must be readable
-
-4️⃣ Test Runner & Fixer  
-- Run: python -m pytest -q
-- Fix failures
-- Rerun until all tests pass
-- Do not stop at first failure
-
-5️⃣ Reviewer  
-- Review code and tests
-- Ensure simplicity
-- Remove unnecessary complexity
-- Improve clarity only if needed
-
-Skipping any step is not allowed.
-
----
-
-# 🧪 Testing Policy (Strict Gate)
-
-Definition of Done:
-
-- All tests pass
-- No skipped tests unless justified
-- No unhandled exceptions
-- No crashes on invalid input
-- Code remains beginner-readable
-
-If tests fail:
-- Fix code or tests
-- Rerun until green
-
----
-
-# 🛡 Safety & Simplicity Rules
-
-- No external libraries except pytest
-- No advanced Python features
-- No clever tricks
 - No global variables
 - No unnecessary abstractions
-
-Prefer clarity over compactness.
+- No advanced Python tricks
+- Keep functions small and readable
 
 ---
 
-# ▶ How to Run
+# 🔁 5️⃣ Required Development Workflow
 
-Run calculator:
-    python calculator.py
+All changes MUST follow this order:
 
-Run tests:
+1. Plan
+2. TDD Loop
+3. Implementation
+4. Lint & Format Gate
+5. Test Gate
+6. Coverage Gate
+7. Security Audit (Code)
+8. Dependency Vulnerability Scan
+9. Secrets Scan
+10. Security Review
+11. Performance Review
+12. Final Re-Validation
+
+Skipping steps is not allowed.
+
+---
+
+# 🧪 6️⃣ Test-Driven Loop With AI (TDD Enforcement)
+
+For any behavioral change:
+
+1. Add or update tests FIRST (or alongside change)
+2. Run:
+
+       python -m pytest -q
+
+3. If failing:
+   - Diagnose root cause
+   - Apply smallest correct fix
+   - Re-run tests
+4. Repeat until tests pass
+5. Only then summarize changes
+
+AI is a quality-enforcing partner, not just a code generator.
+
+---
+
+# 🧹 7️⃣ Lint & Formatting Gate
+
+Run:
+
+    python -m black .
+    python -m ruff check .
+
+All lint issues must be resolved before proceeding.
+
+No warnings left unresolved.
+
+---
+
+# 🧪 8️⃣ Test Gate
+
+Run:
+
     python -m pytest -q
+
+All tests must pass.
+
+No skipped tests unless justified.
+
+---
+
+# 📊 9️⃣ Coverage Enforcement
+
+Run:
+
+    python -m pytest --cov=. --cov-report=term-missing --cov-fail-under=85
+
+Coverage must be ≥ 85%.
+
+If below threshold:
+- Add meaningful tests
+- Re-run until satisfied
+
+---
+
+# 🔐 10️⃣ Security Audit (Static Code Scan)
+
+Run:
+
+    python -m bandit -r . -q
+
+Rules:
+- Fix real issues
+- Justify false positives briefly
+- No high-severity issues allowed
+
+---
+
+# 🛡 11️⃣ Dependency Vulnerability Scan
+
+Run:
+
+    python -m pip_audit
+
+If vulnerabilities are found:
+- Summarize affected packages
+- Propose minimal safe upgrades
+- Avoid unnecessary major version jumps
+- Document reasoning
+
+---
+
+# 🔑 12️⃣ Secrets Scan
+
+Run:
+
+    python -m detect_secrets scan --all-files
+
+If potential secrets detected:
+- List file path + line number
+- Recommend remediation
+- Do NOT expose secret values
+
+---
+
+# 🛡 13️⃣ Security Reviewer (Manual Reasoning)
+
+Verify:
+
+- Input validation present
+- No unsafe eval/exec
+- No hardcoded secrets
+- Safe file handling
+- No unnecessary dependencies
+
+If changes made:
+- Re-run tests and bandit
+
+---
+
+# ⚡ 14️⃣ Performance Reviewer
+
+Check for:
+
+- Inefficient loops
+- Repeated I/O
+- Unnecessary data copying
+- Obvious bottlenecks
+
+Apply minimal improvements only.
+
+If modified:
+- Re-run tests
+
+---
+
+# ✅ 15️⃣ Final Validation
+
+Before declaring complete:
+
+Re-run:
+
+    python -m ruff check .
+    python -m pytest -q
+
+Confirm:
+
+- Lint clean
+- Tests passing
+- Coverage ≥ 85%
+- No critical security issues
+- Code remains beginner-readable
+
+---
+
+# 🏁 Definition of Done
+
+A change is complete only if:
+
+- Formatting clean
+- Lint clean
+- Tests pass
+- Coverage ≥ 85%
+- Bandit clean
+- pip-audit clean or remediation documented
+- No secrets detected
+- No obvious performance issues
+- Code remains simple and readable
+
+Discipline over speed.

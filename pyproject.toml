@@ -4,6 +4,49 @@ version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = []
 
+# -----------------------
+# Coverage
+# -----------------------
+[tool.coverage.run]
+omit = ["calculator - Copy.py"]
+
+# -----------------------
+# Pytest configuration
+# -----------------------
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+addopts = "-q"
+
+# -----------------------
+# Black (formatter)
+# -----------------------
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+# -----------------------
+# Ruff (linter)
+# -----------------------
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+exclude = [".venv", "build", "dist"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = []
+unfixable = ["F401"]  # don't auto-remove imports unless explicitly desired
+
+# -----------------------
+# Bandit (security scan)
+# -----------------------
+[tool.bandit]
+# Scan only your source/tests; skip venv and tool dirs
+exclude_dirs = [".venv", ".git", ".claude"]
+skips = [
+  "B101" # assert_used (tests sometimes use assert)
+]
