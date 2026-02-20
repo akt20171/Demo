@@ -13,7 +13,12 @@
       "Bash(python -m pip_audit*)",
       "Bash(python -m detect_secrets*)",
       "Bash(python -m pip:*)",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(python:*)"
     ],
     "deny": [
       "Bash(rm -rf*)",
