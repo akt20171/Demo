@@ -1,0 +1,86 @@
+# -----------------------------
+# Python cache / build
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+build/
+dist/
+
+# -----------------------------
+# Virtual environments
+# -----------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# -----------------------------
+# Coverage / test artifacts
+# -----------------------------
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# -----------------------------
+# Security scan artifacts
+# -----------------------------
+.bandit
+.bandit.*
+.secrets.baseline
+
+# -----------------------------
+# Local environment / secrets
+# -----------------------------
+.env
+.env.*
+secrets/
+*.pem
+*.key
+*.crt
+*.pfx
+
+# -----------------------------
+# OS-specific
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# VS Code
+# -----------------------------
+.vscode/
+
+# -----------------------------
+# Logs
+# -----------------------------
+*.log
+
+# -----------------------------
+# SQLite / local databases
+# -----------------------------
+*.sqlite
+*.db
+
+# -----------------------------
+# Claude config (optional choice)
+# -----------------------------
+# If you want to keep settings private, uncomment:
+# .claude/settings.json
+
+# Keep agents + commands tracked:
+# .claude/agents/
+# .claude/commands/
+# .claude/teams/
+
+# -----------------------------
+# AWS / SSH
+# -----------------------------
+.aws/
+.ssh/

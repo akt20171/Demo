@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**/*)",
+      "Write(**/*)",
+      "Bash(python --version)",
+      "Bash(python -m pip --version)",
+      "Bash(python -m pip install*)",
+      "Bash(python -m black*)",
+      "Bash(python -m ruff*)",
+      "Bash(python -m pytest*)",
+      "Bash(python -m bandit*)",
+      "Bash(python -m pip_audit*)",
+      "Bash(python -m detect_secrets*)",
+      "Bash(python -m pip:*)",
+      "Bash(git fetch:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf*)",
+      "Bash(del /s /q*)",
+      "Bash(format*)",
+      "Bash(shutdown*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)"
+    ],
+    "env": {
+      "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    }
+  },
+  "defaultMode": "ask"
+}
