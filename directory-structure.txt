@@ -1,0 +1,54 @@
+simple-calculator/
+│
+├── .claude/
+│   ├── agents/
+│   │   ├── coverage_gate.md
+│   │   ├── implementer.md
+│   │   ├── lint_formatter.md
+│   │   ├── performance_reviewer.md
+│   │   ├── planner.md
+│   │   ├── reviewer.md
+│   │   ├── security_audit.md
+│   │   ├── security_reviewer.md
+│   │   ├── test_runner.md
+│   │   └── test_writer.md
+│   │
+│   ├── commands/
+│   │   ├── coverage.md
+│   │   ├── deps-audit.md
+│   │   ├── lint.md
+│   │   ├── perf-review.md
+│   │   ├── pipeline.md
+│   │   ├── secrets-scan.md
+│   │   ├── security-audit.md
+│   │   ├── security-full.md
+│   │   ├── security-review.md
+│   │   ├── tdd.md
+│   │   ├── team-run.md
+│   │   └── test.md
+│   │
+│   ├── skills/
+│   │   └── py-code-reviewer.md
+│   │
+│   ├── teams/
+│   │   └── calculator_team.md
+│   │
+│   ├── settings.json
+│   └── settings.local.json
+│
+├── __pycache__/
+│   └── calculator.cpython-314.pyc
+│
+├── tests/
+│   ├── __pycache__/
+│   │   └── test_calculator.cpython-314-pytest-9.0.2.pyc
+│   └── test_calculator.py
+│
+├── calculator.py
+├── CLAUDE.md
+├── directory-structure.txt
+├── Final.md
+├── Final.pdf
+├── py-code-review-output.md
+├── py-code-review-output.pdf
+└── pyproject.toml
