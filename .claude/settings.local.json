@@ -21,7 +21,11 @@
       "Bash(python:*)",
       "Bash(git pull:*)",
       "Bash(git stash:*)",
-      "Bash(git remote:*)"
+      "Bash(git remote:*)",
+      "Bash(echo EXIT:$?:*)",
+      "Bash(cd:*)",
+      "Skill(explain-code-V2)",
+      "Skill(commit-commands:commit)"
     ],
     "deny": [
       "Bash(rm -rf*)",
