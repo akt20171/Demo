@@ -34,6 +34,11 @@ End with one common mistake or misconception.
 Example: "A common mistake is forgetting that Python lists are mutable —
 changing a copy also changes the original."
 
+## 5. Output
+  Provide output mermaid code to depict high level flow in separate mermaid-v2.md
+  This should be semantic versions so that it generate new unique file.  
+  Please output the code review findings into two separate files i.e explain-code-V2-findings.md and explain-code-V2-findings.pdf in two separate formats.
+  This should be semantic versions so that it generate new unique file.  
 ---
 
 For Python-specific patterns and terms, see `reference.md`.

@@ -14,7 +14,7 @@ prompt: |
   If the user did not provide a script inline, ask them to paste the code or
   provide a file path or name of python file before proceeding.
   Provide output mermaid code to depict high level flow.
-  Please output the code review findings into two separate files i.e explain-code-findings.md and explain-code-findings.pdf in two separate formata.
+  Please output the code review findings into two separate files i.e explain-code-findings.md and explain-code-findings.pdf in two separate formats.
   This should be semantic versions so that it generate new unique file.  
   
 When explaining code, always include:
